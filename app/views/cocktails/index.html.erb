@@ -1,0 +1,35 @@
+
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1497644083578-611b798c60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);">
+    <div class="banner_container d-flex align-items-center justify-content-center flex-column">
+      <h1>Welcome to Raphael's little bar</h1>
+      <p>Come and taste my creations, or add yours...</p>
+    </div>
+  </div>
+
+<div class="container p5 mt-3">
+  <div class= "mt-3">
+    <h2 class='text-center mb-5 mt-5'> Discover our cocktails </h2>
+    <div class='cards'>
+      <div class='row justify-content-center'>
+        <% @cocktails.each do |cocktail| %>
+        <div class="mb-3 col-6 col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title"><%= cocktail.name.capitalize %></h4>
+              <ul>
+                <%cocktail.ingredients.each do |ingredient|%>
+                  <li class="card-text"><%=ingredient.name%></li>
+                <% end %>
+              </ul>
+              <p class="card-text"><small class="text-muted"><%= link_to "More details", cocktail_path(cocktail.id) %></small></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
