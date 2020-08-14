@@ -5,7 +5,8 @@
 </div>
 <div class="container p5 mt-3">
   <p> <%= link_to 'back to all cocktails', cocktails_path %>
-  <p> Ingredients: </p>
+  <div class= "ingredients bg-light p-4 rounded">
+  <h2> Ingredients: </h2>
   <ul>
     <% @cocktail.ingredients.each do |ingredient| %>
       <li> <%= ingredient.name %> |
@@ -15,5 +16,6 @@
       </li>
     <% end %>
   </ul>
-  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class:'btn btn-primary' %>
+  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class:'btn btn-primary rounded-pill mt-2' %>
+  </div>
 </div>
