@@ -36,7 +36,23 @@ puts 'Done !'
 puts "########################################"
 
 puts "Seed 3 cocktails"
+#mojito
 mojito = Cocktail.create(name: "mojito")
+mojito_dose = Doses.new
+doses_array = ["10cl", "One", "25cl"]
+ingredients_array = ["Rum", "Lemon", "Lemonade"]
+ingredients_array.each do |ingredient_array|
+
+
+
+
+#whiskey sour
 whiskey_sour = Cocktail.create(name: "whiskey sour")
+
+
+#gin tonic
 gin_tonic = Cocktail.create(name: "gin tonic")
+
+
+
 puts "Done !"
