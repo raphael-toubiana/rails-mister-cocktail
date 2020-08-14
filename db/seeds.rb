@@ -9,9 +9,11 @@
 require 'JSON'
 require 'open-uri'
 
-puts 'Destroying all existing ingredients...'
+puts 'Destroying all existing ingredients & cocktails...'
 puts '-------'
+Cocktail.destroy_all
 Ingredient.destroy_all
+
 puts 'Done !'
 puts 'Seeding 100 ingredients ...'
 puts '-------'
@@ -31,3 +33,10 @@ ingredients.each do |ingredient|
 end
 puts 'Done !'
 
+puts "########################################"
+
+puts "Seed 3 cocktails"
+mojito = Cocktail.create(name: "mojito")
+whiskey_sour = Cocktail.create(name: "whiskey sour")
+gin_tonic = Cocktail.create(name: "gin tonic")
+puts "Done !"
